@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Supplier</title>
+</head>
+<body>
+    Organisation: <p th:text="${supplier.getOrganisation()}"></p>
+    Address: <p th:text="${supplier.getAddress()}"></p>
+
+    <form th:action="@{/suppliers/{id}/edit(id=${supplier.getId()})}">
+        <input type="submit" value="Edit">
+    </form>
+
+    <form th:method="DELETE" th:action="@{/suppliers/{id}(id=${supplier.getId()})}">
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>
